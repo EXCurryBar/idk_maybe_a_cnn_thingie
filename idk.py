@@ -1,13 +1,28 @@
+#%%
 import csv
 import numpy as np
-from random import shuffle
-import matplotlib.pyplot as plt
-test = []
+from scipy.fftpack import fft
 train = []
-with open('mean_max.csv','r',newline='') as csvfile:
+with open('test_data.csv','r',newline='') as csvfile:
     data = csv.reader(csvfile)
     for row in data:
-        test.append(row)
+        train.append(row)
 
-plt.plot(test)
-plt.show()
+print(np.shape(train))
+train = [abs(fft(data)) for data in train]
+print(np.shape(train))
+
+# %%
+with open('test_dataFFT.csv','w',newline='') as csvfile:
+    csv.writer(csvfile).writerows(train)
+
+# %%
+train = []
+with open('test_dataFFT.csv','r',newline='') as csvfile:
+    data = csv.reader(csvfile)
+    for row in data:
+        train.append(row)
+
+print(np.shape(train))
+
+# %%

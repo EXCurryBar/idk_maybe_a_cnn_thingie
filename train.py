@@ -9,7 +9,7 @@ train_data = []
 test_labels = []
 test_data = []
 
-with open('train_data.csv', 'r', newline='') as csvfile:
+with open('train_dataFFT.csv', 'r', newline='') as csvfile:
     data = csv.reader(csvfile)
     for row in data:
         train_data.append(row)
@@ -18,7 +18,7 @@ with open('train_label.csv', 'r', newline='') as csvfile:
     for row in data:
         train_labels.append(row[0])
 
-with open('test_data.csv', 'r', newline='') as csvfile:
+with open('test_dataFFT.csv', 'r', newline='') as csvfile:
     data = csv.reader(csvfile)
     for row in data:
         test_data.append(row)
@@ -50,7 +50,7 @@ network.summary()
 network.compile(optimizer='nadam', loss='binary_crossentropy',
                 metrics=['accuracy'])
 
-network.fit(trn_data, trn_labels, epochs=500, batch_size=10)
+network.fit(trn_data, trn_labels, epochs=500, batch_size=5)
 network.save('123.h5')
 
 tst_data = np.array(test_data)
