@@ -50,6 +50,6 @@ def evaluate(model='123.h5', valve=15000):
 
 
 # %%
-evaluate('9324_9729.h5', 1000)
+evaluate('idk.h5', 1000)
 
 # %%
