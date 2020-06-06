@@ -47,9 +47,12 @@ def evaluate(model='123.h5', valve=15000):
     print('Accuracy   : %.2f' % ((pos_acc+neg_acc)/len(tst_labels)*100), '%')
     print("Sensitivity: %2f" % (sensitivity*100), '%',
           '\nSpecificity: %2f' % (specificity*100), '%')
-
+    print(predictions)
 
 # %%
-evaluate('9324_9729.h5', 1000)
+evaluate('idk.h5', 1000)
+
+# %%
+
 
 # %%

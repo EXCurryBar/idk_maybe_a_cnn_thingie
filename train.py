@@ -9,20 +9,20 @@ train_data = []
 test_labels = []
 test_data = []
 
-with open('data/train_data.csv', 'r', newline='') as csvfile:
+with open('train_data.csv', 'r', newline='') as csvfile:
     data = csv.reader(csvfile)
     for row in data:
         train_data.append(row)
-with open('data/train_label.csv', 'r', newline='') as csvfile:
+with open('train_label.csv', 'r', newline='') as csvfile:
     data = csv.reader(csvfile)
     for row in data:
         train_labels.append(row[0])
 
-with open('data/test_data.csv', 'r', newline='') as csvfile:
+with open('test_data.csv', 'r', newline='') as csvfile:
     data = csv.reader(csvfile)
     for row in data:
         test_data.append(row)
-with open('data/test_label.csv', 'r', newline='') as csvfile:
+with open('test_label.csv', 'r', newline='') as csvfile:
     data = csv.reader(csvfile)
     for row in data:
         test_labels.append(row[0])
